@@ -136,7 +136,8 @@ export class OpenAIVerificationService extends BaseVerificationService {
     }
 
     // Check reasonable length (OpenAI keys are typically around 51 characters)
-    if (trimmedKey.length < 40 || trimmedKey.length > 60) {
+    //Updated:Starts with sk- and  Longer than 20 chars
+    if (trimmedKey.length < 20) {
       return false;
     }
 

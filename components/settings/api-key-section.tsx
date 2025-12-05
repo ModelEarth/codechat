@@ -20,6 +20,12 @@ import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import type { VerificationResult } from "@/lib/verification/types";
 
+import { localStorageManager } from "@/lib/storage/local-storage-manager";
+import { getDaysSinceTimestamp, isVerificationExpired, formatVerificationAge,} from "@/lib/storage/helpers";
+
+
+
+
 type APIKeySectionProps = {
   provider: "google" | "anthropic" | "openai";
   title: string;
@@ -45,6 +51,8 @@ export function APIKeySection({
   const [isVerifying, setIsVerifying] = useState(false);
   const [verificationResult, setVerificationResult] =
     useState<VerificationResult | null>(null);
+  const lastVerified = localStorageManager.getAPIKeyVerifiedAt(provider);
+  const expired = isVerificationExpired(lastVerified);
 
   const handleVerify = async () => {
     if (!value.trim()) {
@@ -130,7 +138,14 @@ export function APIKeySection({
     }
 
     if (verificationResult?.success) {
+      localStorageManager.setAPIKeyVerifiedAt(provider,new Date().toISOString());
+    }
+
+
+    if (verificationResult?.success) {
+      localStorageManager.setAPIKeyVerifiedAt(provider, new Date().toISOString());
       return (
+        <div className="space-y-1">
         <div className="flex items-center gap-2 text-green-600 text-sm">
           <CheckedSquare size={14} />
           <span>API key verified successfully</span>
@@ -140,6 +155,11 @@ export function APIKeySection({
             </span>
           )}
         </div>
+        <div className="text-xs text-muted-foreground">
+          {formatVerificationAge(lastVerified)}
+        </div>
+        </div>
+
       );
     }
 
@@ -187,6 +207,12 @@ export function APIKeySection({
         <CardDescription className="text-sm">{description}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-3 p-4 pt-0 sm:space-y-4 sm:p-6">
+        {expired && (
+          <div className="text-yellow-700 bg-yellow-50 border border-yellow-200 p-3 rounded text-xs">
+            ⚠️ Your {title} API key verification is older than 30 days.<br />
+            Please re-verify to keep using this provider securely.
+          </div>
+        )}
         <div className="space-y-2">
           <Label htmlFor={`${provider}-api-key`}>API Key</Label>
           <div className="relative">

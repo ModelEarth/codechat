@@ -284,6 +284,22 @@ export const storageHelpers = {
   cleanup: (): void => {
     localStorageManager.cleanupOnLogout();
   },
+  /**
+   * Save verification timestamp
+   */
+  saveVerificationTimestamp: (provider: APIProvider) => {
+    const timestamp = new Date().toISOString();
+    localStorageManager.setAPIKeyVerifiedAt(provider, timestamp);
+  },
+
+  /**
+   * Get verification timestamp
+   */
+  getVerificationTimestamp: (provider: APIProvider): string | null => {
+    return localStorageManager.getAPIKeyVerifiedAt(provider);
+  },
+  
+
 };
 
 /**
@@ -294,3 +310,40 @@ export const storage = {
   github: githubHelpers,
   general: storageHelpers,
 };
+
+/**getDaysSinceTimestamp(timestamp)
+ *    - Returns the number of days between now and the timestamp.
+ *    - Used to calculate the "age" of an API key verification.
+ */
+export function getDaysSinceTimestamp(timestamp: string | null): number | null {
+  if (!timestamp) return null;
+  const now = Date.now();
+  const then = new Date(timestamp).getTime();
+  return Math.floor((now - then) / (1000 * 60 * 60 * 24));
+}
+/**isVerificationExpired(timestamp)
+ *    - Returns true if the last verification happened more than 30 days ago.
+ *    - Used to trigger rotation warnings and force re-verification. */
+
+export function isVerificationExpired(timestamp: string | null): boolean {
+  const days = getDaysSinceTimestamp(timestamp);
+  return days !== null && days > 30;
+}
+
+/*** formatVerificationAge(timestamp)
+ *    - Returns a user-friendly string like:
+ *        "Verified today"
+ *        "Verified 3 days ago"
+ *        "Verified 45 days ago"
+ *    - Used for UI display under the API key status. */
+export function formatVerificationAge(timestamp: string | null): string {
+  if (!timestamp) return "Never verified";
+
+  const days = getDaysSinceTimestamp(timestamp);
+  if (days === null) return "Never verified";
+  if (days === 0) return "Verified today";
+  if (days === 1) return "Verified 1 day ago";
+
+  return `Verified ${days} days ago`;
+}
+

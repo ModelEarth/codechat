@@ -34,6 +34,9 @@ import { GitHubIntegrationSection } from "./github-integration-section";
 import { SettingsEnhancements } from "./settings-enhancements";
 import { StorageManagementSection } from "./storage-management-section";
 import { ToastNotifications } from "./toast-notifications";
+import { getDaysSinceTimestamp, isVerificationExpired, formatVerificationAge, } from "@/lib/storage/helpers";
+import { localStorageManager } from "@/lib/storage";
+
 
 type SettingsPageProps = {
   className?: string;
@@ -55,6 +58,12 @@ export function SettingsPage({ className }: SettingsPageProps) {
   const googleService = new GoogleVerificationService();
   const anthropicService = new AnthropicVerificationService();
   const openaiService = new OpenAIVerificationService();
+
+  // API key verification timestamps
+  const [googleVerifiedAt, setGoogleVerifiedAt] = useState<string | null>(null);
+  const [anthropicVerifiedAt, setAnthropicVerifiedAt] = useState<string | null>(null);
+  const [openaiVerifiedAt, setOpenaiVerifiedAt] = useState<string | null>(null);
+
 
   // Network status and error handling
   const { isOnline, isSlowConnection } = useNetworkStatus();
@@ -104,6 +113,11 @@ export function SettingsPage({ className }: SettingsPageProps) {
       const existingAnthropicKey = storage.apiKeys.get("anthropic");
       const existingOpenaiKey = storage.apiKeys.get("openai");
 
+      // Load verification timestamps
+      setGoogleVerifiedAt(localStorageManager.getAPIKeyVerifiedAt("google"));
+      setAnthropicVerifiedAt(localStorageManager.getAPIKeyVerifiedAt("anthropic"));
+      setOpenaiVerifiedAt(localStorageManager.getAPIKeyVerifiedAt("openai"));
+
       if (existingGoogleKey) {
         setGoogleKey(existingGoogleKey);
       }
@@ -113,6 +127,29 @@ export function SettingsPage({ className }: SettingsPageProps) {
       if (existingOpenaiKey) {
         setOpenaiKey(existingOpenaiKey);
       }
+
+      // Key rotation warnings
+      if (isVerificationExpired(googleVerifiedAt)) {
+        toast.warning(
+          "Google API Key Needs Rotation",
+          "Your Google API key was verified over 30 days ago. Please re-verify."
+        );
+      }
+
+      if (isVerificationExpired(anthropicVerifiedAt)) {
+        toast.warning(
+          "Anthropic API Key Needs Rotation",
+          "Your Anthropic API key was verified over 30 days ago. Please re-verify."
+        );
+      }
+
+      if (isVerificationExpired(openaiVerifiedAt)) {
+        toast.warning(
+          "OpenAI API Key Needs Rotation",
+          "Your OpenAI API key was verified over 30 days ago. Please re-verify."
+        );
+      }
+
 
       // Check storage health
       const healthCheck = storage.general.checkHealth();
@@ -486,7 +523,7 @@ export function SettingsPage({ className }: SettingsPageProps) {
                   <Suspense fallback={<ComponentLoading />}>
                     <SettingsErrorBoundary>
                       <APIKeySection
-                        description="Configure your Google AI API key to use Gemini models"
+                        description={`Configure your Google AI API key to use Gemini models. ${formatVerificationAge(googleVerifiedAt)}`}
                         onChange={handleGoogleKeyChange}
                         onVerify={googleService.verify.bind(googleService)}
                         placeholder="AIza..."
@@ -501,7 +538,7 @@ export function SettingsPage({ className }: SettingsPageProps) {
                   <Suspense fallback={<ComponentLoading />}>
                     <SettingsErrorBoundary>
                       <APIKeySection
-                        description="Configure your Anthropic API key to use Claude models"
+                        description={`Configure your Anthropic API key to use Claude models. ${formatVerificationAge(anthropicVerifiedAt)}`}
                         onChange={handleAnthropicKeyChange}
                         onVerify={anthropicService.verify.bind(
                           anthropicService
@@ -518,7 +555,7 @@ export function SettingsPage({ className }: SettingsPageProps) {
                   <Suspense fallback={<ComponentLoading />}>
                     <SettingsErrorBoundary>
                       <APIKeySection
-                        description="Configure your OpenAI API key to use GPT models"
+                        description={`Configure your OpenAI API key to use GPT models. ${formatVerificationAge(openaiVerifiedAt)}`}
                         onChange={handleOpenaiKeyChange}
                         onVerify={openaiService.verify.bind(openaiService)}
                         placeholder="sk-..."

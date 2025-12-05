@@ -26,6 +26,7 @@ export class AnthropicVerificationService extends BaseVerificationService {
           "Content-Type": "application/json",
           "x-api-key": apiKey,
           "anthropic-version": "2023-06-01",
+          "anthropic-dangerous-direct-browser-access": "true",
         },
         body: JSON.stringify({
           model: "claude-3-haiku-20240307",

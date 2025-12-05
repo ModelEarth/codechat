@@ -9,6 +9,12 @@ export type LocalStorageSchema = {
     anthropic?: string;
     openai?: string;
   };
+  "api-key-verified": {
+    google?: string;      // timestamp ISO string
+    anthropic?: string;
+    openai?: string;
+  };
+
   integrations: {
     github?: {
       token: string;
