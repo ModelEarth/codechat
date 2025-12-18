@@ -208,19 +208,33 @@ class LocalStorageManager implements StorageManager {
    * Remove API key for a specific provider
    */
   removeAPIKey(provider: APIProvider): void {
-    const apiKeys =
-      this.getStorageData<LocalStorageSchema["api-keys"]>("api-keys");
-    if (apiKeys?.[provider]) {
-      delete apiKeys[provider];
-      this.setStorageData("api-keys", apiKeys);
+  const apiKeys =
+    this.getStorageData<LocalStorageSchema["api-keys"]>("api-keys") || {};
 
-      this.emitEvent({
-        type: "api-key-removed",
-        provider,
-        timestamp: Date.now(),
-      });
-    }
+  // Remove the API key
+  if (apiKeys[provider]) {
+    delete apiKeys[provider];
+    this.setStorageData("api-keys", apiKeys);
   }
+
+  // ALSO remove its verification timestamp
+  const verified =
+    this.getStorageData<Record<string, { verifiedAt: string }>>(
+      "api-key-verified"
+    ) || {};
+
+  if (verified[provider]) {
+    delete verified[provider];
+    this.setStorageData("api-key-verified", verified);
+  }
+
+  this.emitEvent({
+    type: "api-key-removed",
+    provider,
+    timestamp: Date.now(),
+  });
+}
+
 
   /**
    * Get GitHub Personal Access Token
@@ -535,6 +549,29 @@ class LocalStorageManager implements StorageManager {
   getConfig(): StorageConfig {
     return { ...this.config };
   }
+  /**
+  * Save verification timestamp for an API provider
+  */
+  setAPIKeyVerifiedAt(provider: APIProvider, timestamp: string): void {
+  const existing =
+    this.getStorageData<LocalStorageSchema["api-key-verified"]>("api-key-verified") || {};
+
+  existing[provider] = timestamp;
+  this.setStorageData("api-key-verified", existing);
+}
+
+
+  /**
+   * Get verification timestamp for a provider
+   */
+  getAPIKeyVerifiedAt(provider: APIProvider): string | null {
+  const existing =
+    this.getStorageData<LocalStorageSchema["api-key-verified"]>("api-key-verified") || {};
+
+  return existing[provider] || null;
+}
+
+
 }
 
 export const localStorageManager = LocalStorageManager.getInstance();
