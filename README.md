@@ -1,10 +1,10 @@
 # CodeChat
 
-[Earthscape chat dev](https://github.com/Earthscape/chat) - Our NextJS Vercel deployment parent repo. <!-- ananthpai1998 -->
+[Earthscape chat dev](https://github.com/Earthscape/chat) - Our NextJS Vercel deployment parent repo. <!-- ananthpai1998 -->- [Start Chatbot](https://earthscape.vercel.app)
 
-[ModelEarth chat fork](https://github.com/ModelEarth/chat) - For chat trained with our model.earth repos.
+[ModelEarth chat fork](https://github.com/ModelEarth/chat) - For chat trained with our model.earth repos. - [Start Chatbot](https://modelearth.vercel.app)
 
-Our RAG vectors are trained with [Voyager AI](https://voyageai.com/) and Pinecone using the [model.earth repos](https://github.com/modelearth/) listed below.
+[Our RAG vectors](https://github.com/Earthscape/chat/tree/main/ingestion) are trained with [Voyage AI](https://voyageai.com/) and Pinecone using the [model.earth repos](https://github.com/modelearth/) listed below.
 
 ## Model.earth Repos
 
