@@ -34,7 +34,8 @@ Our webroot repo loads these submodules, plus claude.md and [vector_sync.yml](ht
 
 <br>Optional:
 
-**Extra repos:** (forked and cloned into webroot) topojson, community, nisar, useeio-json, trade-data
+**Extra repos:** (forked and cloned into webroot) community, cv, nisar, trade-data
+Defined in [.siterepos](https://github.com/ModelEarth/webroot/blob/main/.siterepos)
 
 ## Data-Pipeline (static csv and json output for fast web reports)
 
