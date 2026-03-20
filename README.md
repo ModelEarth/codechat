@@ -1,8 +1,10 @@
 # CodeChat
 
-[Earthscape chat dev](https://github.com/Earthscape/chat) - Our NextJS Vercel deployment parent repo. <!-- ananthpai1998 -->- [Start Chatbot](https://earthscape.vercel.app)
+[Our Earthscap chat](../chat/) originated from the popular [Vercel NextJS Chatbot Template](https://github.com/vercel/chatbot)
 
-[ModelEarth chat fork](https://github.com/ModelEarth/chat) - For chat trained with our model.earth repos. - [Start Chatbot](https://modelearth.vercel.app)
+[Start Earthscape Chat](https://earthscape.vercel.app)<!-- ananthpai1998 --> - To explore any Github repo, add your Github Token under Settings.
+
+[Start ModelEarth Chat](https://modelearth.vercel.app) - For chat RAG trained with our model.earth repos below. - [Github](https://github.com/ModelEarth/chat)
 
 [Our RAG vectors](https://github.com/Earthscape/chat/tree/main/ingestion) are trained with [Voyage AI](https://voyageai.com/) and Pinecone using the [model.earth repos](https://github.com/modelearth/) listed below.
 
@@ -18,7 +20,7 @@ Our webroot repo loads these submodules, plus claude.md and [vector_sync.yml](ht
 | [codechat](../codechat/) | [github.com/modelearth/codechat](https://github.com/modelearth/codechat) | Chat RAG using Voyager AI |
 | [comparison](../comparison/) | [github.com/modelearth/comparison](https://github.com/modelearth/comparison) | Trade Flow data visualizations |
 | [desktop](../desktop/) | [github.com/modelearth/desktop](https://github.com/modelearth/desktop) | Desktop Production Suite |
-| [exiobase](../exiobase/) | [github.com/modelearth/comparison](https://github.com/modelearth/exiobase) | Trade data to CSV and SQL |
+| [exiobase](../exiobase/) | [github.com/modelearth/exiobase](https://github.com/modelearth/exiobase) | Trade data to CSV and SQL |
 | [feed](../feed/) | [github.com/modelearth/feed](https://github.com/modelearth/feed) | FeedPlayer video/gallery |
 | [home](../home/) | [github.com/modelearth/home](https://github.com/modelearth/home) | Everybody's Home Page |
 | [io](../io/) | [github.com/modelearth/io](https://github.com/modelearth/io) | Inflow-Outflow supply chain models |
