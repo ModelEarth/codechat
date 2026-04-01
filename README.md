@@ -1,16 +1,16 @@
 # CodeChat
 
-[Our Earthscape Chat](../chat/) add Pinecode and Voyage AI RAG to the popular [Vercel NextJS Chatbot](https://github.com/vercel/chatbot)
+[Our Earthscape Chat](../chat/) adds Pinecode and Voyage AI RAG to the popular [Vercel NextJS Chatbot](https://github.com/vercel/chatbot)
 
 [Start Earthscape Chat](https://earthscape.vercel.app)<!-- ananthpai1998 --> - To explore any Github repo, add your Github Token under Settings.
 
 [Start ModelEarth Chat](https://modelearth.vercel.app) - For chat RAG trained with our model.earth repos below. - [Github](https://github.com/ModelEarth/chat)
 
-[Our RAG vectors](https://github.com/Earthscape/chat/tree/main/ingestion) are trained with [Voyage AI](https://voyageai.com/) and Pinecone using the [model.earth repos](https://github.com/modelearth/) listed below.
+[Our RAG vectors](https://github.com/Earthscape/chat/tree/main/ingestion) are trained with [Voyage AI](https://voyageai.com/) and [Pinecone](https://www.pinecone.io) using the [model.earth repos](https://github.com/ModelEarth?tab=repositories) listed below.
 
-## Model.earth Repos
+## model.earth repos
 
-Our webroot repo loads these submodules, plus claude.md and [vector_sync.yml](https://github.com/ModelEarth/webroot/blob/main/.github/workflows/vector_sync.yml) &ndash; [Get Started](https://model.earth/webroot/)
+[Our webroot repo](https://model.earth/webroot/) loads these submodules:
 
 | Name | Repository | Description |
 |------|------------|-------------|
@@ -34,13 +34,13 @@ Our webroot repo loads these submodules, plus claude.md and [vector_sync.yml](ht
 | [team](../team/) | [github.com/modelearth/team](https://github.com/modelearth/team) | Rust API for Azure and AI Insights |  
 | [community-forecasting](../community-forecasting/)&nbsp;&nbsp; | [github.com/modelearth/...forecasting](https://github.com/modelearth/community-forecasting)&nbsp;&nbsp; | Javascript ML with maps (2018) |
 
-<br>Optional:
+<br>
 
-**Extra repos:** (forked and cloned into webroot) community, cv, nisar. Defined in [.siterepos](https://github.com/ModelEarth/webroot/blob/main/.siterepos)
+**Optional extra repos:** community, cv, nisar. (forked and cloned based on [.siterepos](https://github.com/ModelEarth/webroot/blob/main/.siterepos))
 
 ## Data-Pipeline (static csv and json output for fast web reports)
 
-These output repos may be pulled into local webroots during data processing, but we avoid committing these as a submodules in the webroots due to their large size. The static data in these repos is pulled directly through Github Pages and the Cloudflare CDN.
+These output repos may be pulled into local webroots during data processing, but we avoid committing these as a submodules due to their large size. The static data in these repos is pulled directly through Github Pages and the Cloudflare CDN.
 
 | Name | Repository | Description |
 |------|------------|-------------|
