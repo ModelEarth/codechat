@@ -1,6 +1,6 @@
 # CodeChat
 
-[Our Earthscap chat](../chat/) originated from the popular [Vercel NextJS Chatbot Template](https://github.com/vercel/chatbot)
+[Our Earthscape Chat](../chat/) add Pinecode and Voyage AI RAG to the popular [Vercel NextJS Chatbot](https://github.com/vercel/chatbot)
 
 [Start Earthscape Chat](https://earthscape.vercel.app)<!-- ananthpai1998 --> - To explore any Github repo, add your Github Token under Settings.
 
