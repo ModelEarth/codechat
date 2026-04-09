@@ -19,6 +19,7 @@
 | [chat](../chat/) | [github.com/modelearth/chat](https://github.com/modelearth/chat) | Chat UX |
 | [codechat](../codechat/) | [github.com/modelearth/codechat](https://github.com/modelearth/codechat) | Chat RAG using Voyager AI |
 | [comparison](../comparison/) | [github.com/modelearth/comparison](https://github.com/modelearth/comparison) | Trade Flow data visualizations |
+| [data-pipeline](../data-pipeline/) | [github.com/modelearth/data-pipeline](https://github.com/modelearth/data-pipeline) | Python data processing pipeline |
 | [desktop](../desktop/) | [github.com/modelearth/desktop](https://github.com/modelearth/desktop) | Desktop Production Suite |
 | [exiobase](../exiobase/) | [github.com/modelearth/exiobase](https://github.com/modelearth/exiobase) | Trade data to CSV and SQL |
 | [feed](../feed/) | [github.com/modelearth/feed](https://github.com/modelearth/feed) | FeedPlayer video/gallery |
@@ -36,7 +37,7 @@
 
 <br>
 
-**Optional extra repos:** community, cv, nisar. (forked and cloned based on [.siterepos](https://github.com/ModelEarth/webroot/blob/main/.siterepos))
+**Optional extra repos:** project, community, cv, nisar. (forked and cloned based on [.siterepos](https://github.com/ModelEarth/webroot/blob/main/.siterepos))
 
 ## Data-Pipeline (static csv and json output for fast web reports)
 
@@ -44,7 +45,6 @@ These output repos may be pulled into local webroots during data processing, but
 
 | Name | Repository | Description |
 |------|------------|-------------|
-| [data-pipeline](../data-pipeline/) | [github.com/modelearth/data-pipeline](https://github.com/modelearth/data-pipeline) | Python data processing pipeline |
 | [trade-data](../trade-data/) | [github.com/modelearth/trade-data](https://github.com/modelearth/trade-data) | Tradeflow data outputs |
 | [products-data](../products-data/) | [github.com/modelearth/products-data](https://github.com/modelearth/products-data) | Product impact profiles |
 | [community-data](../community-data/) | [github.com/modelearth/community-data](https://github.com/modelearth/community-data) | Community-level data outputs |
