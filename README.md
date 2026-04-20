@@ -30,7 +30,7 @@
 | [profile](../profile/) | [github.com/modelearth/profile](https://github.com/modelearth/profile) | Footprint Reports for communities and industries |
 | [projects](../projects/) | [github.com/modelearth/projects](https://github.com/modelearth/projects) | Overview and TODOs - Projects Hub |
 | [realitystream](../realitystream/) | [github.com/modelearth/realitystream](https://github.com/modelearth/realitystream) | Run Models colab |
-| [reports](../reports/) | [github.com/modelearth/realitystream](https://github.com/modelearth/reports) | Output from RealityStream colab |
+| [reports](../reports/) | [github.com/modelearth/reports](https://github.com/modelearth/reports) | Output from RealityStream colab |
 | [swiper](../swiper/) | [github.com/modelearth/swiper](https://github.com/modelearth/swiper) | UI swiper component for FeedPlayer |
 | [team](../team/) | [github.com/modelearth/team](https://github.com/modelearth/team) | Rust API for Azure and AI Insights |  
 | [community-forecasting](../community-forecasting/)&nbsp;&nbsp; | [github.com/modelearth/...forecasting](https://github.com/modelearth/community-forecasting)&nbsp;&nbsp; | Javascript ML with maps (2018) |
