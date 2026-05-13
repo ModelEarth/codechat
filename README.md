@@ -1,12 +1,14 @@
 # CodeChat
 
-[Our Earthscape Chat](../chat/) adds Pinecode and Voyage AI RAG to the popular [Vercel NextJS Chatbot](https://github.com/vercel/chatbot)
+[Our Earthscape Chat](../chat/) provides knowledge-base responses using Pinecone 
+and Voyage AI RAG vector layers added to the popular [Vercel NextJS Chatbot](https://github.com/vercel/chatbot)
 
-[Start Earthscape Chat](https://earthscape.vercel.app)<!-- ananthpai1998 --> - To explore any Github repo, add your Github Token under Settings.
+[Start Chat](https://modelearth.vercel.app) - For chat RAG trained with our model.earth repos below. - [Github](https://github.com/ModelEarth/chat)
 
-[Start ModelEarth Chat](https://modelearth.vercel.app) - For chat RAG trained with our model.earth repos below. - [Github](https://github.com/ModelEarth/chat)
+[Start Parent](https://earthscape.vercel.app)<!-- ananthpai1998 --> - Update less often. To explore Github repos add your Github Token under Settings.
 
-[Our RAG vectors](https://github.com/Earthscape/chat/tree/main/ingestion) are trained with [Voyage AI](https://voyageai.com/) and [Pinecone](https://www.pinecone.io) using the [model.earth repos](https://github.com/ModelEarth?tab=repositories) listed below.
+
+[Our Ingestion Pipeline](../chat/ingestion/) is trained with [Voyage AI](https://voyageai.com/) and [Pinecone](https://www.pinecone.io) using the [model.earth repos](https://github.com/ModelEarth?tab=repositories) listed below.
 
 ## model.earth repos
 
