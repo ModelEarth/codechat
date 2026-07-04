@@ -2,7 +2,7 @@
 
 ## Transcribe to AI
 
-For transcribing text from our Meetups into actionable items, we'll use Pinecone Nexus and Pinecone KnowQL to create a wiki-style set of instructions that will be executed in GitHub repos using our existing code base. The list of repos on this page is the code base. From within that list we have a shorter list of RAG ingested repos that also use Pinecone with Voyage AI. Always have the project create an embeddable JavaScript file so the work can be demonstrated by placing it into our chat repo as a static link.
+For transcribing text from our Meetups into actionable items, we'll use Pinecone Nexus and Pinecone KnowQL to create a wiki-style set of instructions that will be executed in GitHub repos using our existing code base. The list of repos on this page is the code base. From within that list we have a shorter list of RAG ingested repos that also use Pinecone with Voyage AI. Always have the project create an embeddable JavaScript file so the work can be demonstrated by placing it into our chat repo as a static link. Examples: [chat/know](chat/know) and [vercel know](https://modelearth.vercel.app/know)
 
 [Knowledge layer (Nexus)](https://venturebeat.com/data/the-rag-era-is-ending-for-agentic-ai-a-new-compilation-stage-knowledge-layer-is-what-comes-next)
 
