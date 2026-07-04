@@ -1,5 +1,11 @@
 # CodeChat
 
+## Transcribe to AI
+
+For transcribing text from our Meetups into actionable items, we'll use Pinecone Nexus and Pinecone KnowQL to create a wiki-style set of instructions that will be executed in GitHub repos using our existing code base. The list of repos on this page is the code base. From within that list we have a shorter list of RAG ingested repos that also use Pinecone with Voyage AI. Always have the project create an embeddable JavaScript file so the work can be demonstrated by placing it into our chat repo as a static link.
+
+[Knowledge layer (Nexus)](https://venturebeat.com/data/the-rag-era-is-ending-for-agentic-ai-a-new-compilation-stage-knowledge-layer-is-what-comes-next)
+
 [Our Earthscape Chat](../chat/) provides knowledge-base responses using Pinecone 
 and Voyage AI RAG vector layers added to the popular [Vercel NextJS Chatbot](https://github.com/vercel/chatbot)
 
@@ -19,7 +25,7 @@ and Voyage AI RAG vector layers added to the popular [Vercel NextJS Chatbot](htt
 | [webroot](https://model.earth/webroot/) | [github.com/modelearth/webroot](https://github.com/modelearth/webroot) | PartnerTools webroot |
 | [cloud](../cloud/) | [github.com/modelearth/cloud](https://github.com/modelearth/cloud) | Flask for python colabs |
 | [chat](../chat/) | [github.com/modelearth/chat](https://github.com/modelearth/chat) | Chat UX |
-| [codechat](../codechat/) | [github.com/modelearth/codechat](https://github.com/modelearth/codechat) | Chat RAG using Voyager AI |
+| [codechat](../codechat/) | [github.com/modelearth/codechat](https://github.com/modelearth/codechat) | Chat RAG using Voyage AI |
 | [comparison](../comparison/) | [github.com/modelearth/comparison](https://github.com/modelearth/comparison) | Trade Flow data visualizations |
 | [data-pipeline](../data-pipeline/) | [github.com/modelearth/data-pipeline](https://github.com/modelearth/data-pipeline) | Python data processing pipeline |
 | [desktop](../desktop/) | [github.com/modelearth/desktop](https://github.com/modelearth/desktop) | Desktop Production Suite |
@@ -27,7 +33,7 @@ and Voyage AI RAG vector layers added to the popular [Vercel NextJS Chatbot](htt
 | [feed](../feed/) | [github.com/modelearth/feed](https://github.com/modelearth/feed) | FeedPlayer video/gallery |
 | [home](../home/) | [github.com/modelearth/home](https://github.com/modelearth/home) | Everybody's Home Page |
 | [io](../io/) | [github.com/modelearth/io](https://github.com/modelearth/io) | Inflow-Outflow supply chain models |
-| [localsite](../localsite/) | [github.com/modelearth/localsite](https://github.com/modelearth/localsite) | Core javacript utilities, tabulator |
+| [localsite](../localsite/) | [github.com/modelearth/localsite](https://github.com/modelearth/localsite) | Core JavaScript utilities, tabulator |
 | [products](../products/) | [github.com/modelearth/products](https://github.com/modelearth/products) | Building Transparency Product API |
 | [profile](../profile/) | [github.com/modelearth/profile](https://github.com/modelearth/profile) | Footprint Reports for communities and industries |
 | [projects](../projects/) | [github.com/modelearth/projects](https://github.com/modelearth/projects) | Overview and TODOs - Projects Hub |
