@@ -1,12 +1,9 @@
 # CodeChat
 
-## Transcribe to AI
+Upcoming: [chat know](https://modelearth.vercel.app/know) - trade map is not yet integrated with chat.
 
-For transcribing text from our Meetups into actionable items, we'll use Pinecone Nexus and Pinecone KnowQL to create a wiki-style set of instructions that will be executed in GitHub repos using our existing code base. The list of repos on this page is the code base. From within that list we have a shorter list of RAG ingested repos that also use Pinecone with Voyage AI. Always have the project create an embeddable JavaScript file so the work can be demonstrated by placing it into our chat repo as a static link. Examples: [chat/know](chat/know) and [vercel know](https://modelearth.vercel.app/know)
 
-[Knowledge layer (Nexus)](https://venturebeat.com/data/the-rag-era-is-ending-for-agentic-ai-a-new-compilation-stage-knowledge-layer-is-what-comes-next)
-
-[Our Earthscape Chat](../chat/) provides knowledge-base responses using Pinecone 
+[Our Earthscape Chat](https://modelearth.vercel.app) ([overview](../chat/)) includes knowledge-base responses using Pinecone 
 and Voyage AI RAG vector layers added to the popular [Vercel NextJS Chatbot](https://github.com/vercel/chatbot)
 
 [Start Chat](https://modelearth.vercel.app) - For chat RAG trained with our model.earth repos below. - [Github](https://github.com/ModelEarth/chat)
@@ -59,4 +56,10 @@ These output repos may be pulled into local webroots during data processing, but
 | [community-timelines](../community-timelines/) | [github.com/modelearth/community-timelines](https://github.com/modelearth/community-timelines) | Timeline data for communities |
 | [community-zipcodes](../community-zipcodes/) | [github.com/modelearth/community-zipcodes](https://github.com/modelearth/community-zipcodes) | ZIP code level community data |
 
+
+## Knowledge Base and Orchestration
+
+For transcribing text into actionable items, we'll compare Google with tools like Pinecone Nexus and Pinecone KnowQL to create a wiki-style set of instructions that will be executed in GitHub repos using our existing code base. The list of repos on this page is the code base. From within that list we have a shorter list of RAG ingested repos that also use Pinecone with Voyage AI. Always have the project create an embeddable JavaScript file so the work can be demonstrated by placing it into our chat repo as a static link.
+
+[Knowledge layer (Nexus)](https://venturebeat.com/data/the-rag-era-is-ending-for-agentic-ai-a-new-compilation-stage-knowledge-layer-is-what-comes-next) - We were not able to get free access to Nexus trial 
 
