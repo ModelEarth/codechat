@@ -1,7 +1,6 @@
 # CodeChat
 
-Upcoming: [chat know](https://modelearth.vercel.app/know) - trade map is not yet integrated with chat.
-
+Coming soon: [chat know](https://modelearth.vercel.app/know) - Tradeflow maps integrated with chat and [our voice-chat](https://neighborhood.org/project/goals)
 
 [Our Earthscape Chat](https://modelearth.vercel.app) ([overview](../chat/)) includes knowledge-base responses using Pinecone 
 and Voyage AI RAG vector layers added to the popular [Vercel NextJS Chatbot](https://github.com/vercel/chatbot)
